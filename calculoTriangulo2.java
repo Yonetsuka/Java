@@ -4,9 +4,9 @@ import javax.swing.JOptionPane;
 
 public class calculoTriangulo2{
 	public static void main(String[] args) {
-	  int base = 0, altura = 0;
-		String aux;
-	  try {
+	int base = 0, altura = 0;
+	String aux;
+	try {
 		aux = JOptionPane.showInputDialog("Digite a base do triângulo: ");
 		base = Integer.parseInt(aux);
 		aux = JOptionPane.showInputDialog("Digite a altura do triângulo: ");
