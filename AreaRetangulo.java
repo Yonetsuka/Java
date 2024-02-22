@@ -11,9 +11,9 @@ public class AreaRetangulo {
         			scan = new Scanner(System.in);
         			System.out.println("Digite o lado maior do retângulo: ");
         			ladoMaior = scan.nextInt();
-              System.out.println("Digite o lado menor do retângulo: ");
-              ladoMenor = scan.nextInt();
-        			System.out.println("A área do círculo é: " + (raio * raio));
+                                System.out.println("Digite o lado menor do retângulo: ");
+                                ladoMenor = scan.nextInt();
+        			System.out.println("A área do retângulo é: " + (ladoMaior * ladoMenor));
         		} catch (Exception e) {
         			// TODO: handle exception
         			System.out.println("Formato incorreto do número");
