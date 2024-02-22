@@ -10,7 +10,7 @@ public class CalculoTriangulo {
 			scan = new Scanner(System.in);
 			System.out.println("Digite o tamanho da base do triângulo");
 			base = scan.nextInt();
-      System.out.println("Digite a altura do triâncgulo");
+      			System.out.println("Digite a altura do triâncgulo");
 			altura = scan.nextInt();
 			System.out.println("A área do triângulo é: " + ((base * altura) / 2) );
 			
