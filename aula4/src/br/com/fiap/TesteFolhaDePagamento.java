@@ -9,6 +9,7 @@ public class TesteFolhaDePagamento {
 		
 		folhaDePagamento1.salarioBruto = 5000;
 		folhaDePagamento1.valorPlanoDeSaude = 50;
+	    folhaDePagamento1.descontoINSS = 10;
 		folhaDePagamento1.numeroDeDependentes = 2;
 		
 		salarioLiq = folhaDePagamento1.calcularSalarioLiquido();
