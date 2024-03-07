@@ -26,7 +26,7 @@ public class ArCondicionado{
 	}
 	public void setModo(int modo) {
 		try {
-			if (modo == "Ventilar" || modo == "Aquecer" || modo == "Resfriar" ) {
+			if (modo.equals("Ventilar") || modo.equals("Aquecer") || modo.equals("Resfriar") ) {
 				this.modo = modo;
 			}
 			else {
@@ -50,7 +50,7 @@ public class ArCondicionado{
 	}
 	public void trocarModo(String modo){
 		try {
-			if (modo == "Ventilar" || modo == "Aquecer" || modo == "Resfriar" ) {
+			if (modo.equals("Ventilar") || modo.equals("Aquecer") || modo.equals("Resfriar") ) {
 				this.modo = modo;
 			}
 			else {
