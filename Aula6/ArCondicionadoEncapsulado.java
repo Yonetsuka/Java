@@ -1,10 +1,10 @@
 package br.com.fiap
 
 public class ArCondicionado{
-  //variáveis
-  private int temperatura;
-  private String modo;
-  //gets e sets
+	//variáveis
+	private int temperatura;
+	private String modo;
+	//gets e sets
 	public int getTemperatura() {
 		return temperatura;
 	}
@@ -36,5 +36,32 @@ public class ArCondicionado{
 		catch(Exception e){
 			System.out.println(e.getMessage());
 		}
+	}
+	//voids
+	public void aumentarTemperattura(){
+		if(temperatura < 26){
+			temperatura ++;
+		}
+	}
+	public void diminuirTemperattura(){
+		if(temperatura > 15){
+			temperatura --;
+		}
+	}
+	public void trocarModo(String modo){
+		try {
+			if (modo == "Ventilar" || modo == "Aquecer" || modo == "Resfriar" ) {
+				this.modo = modo;
+			}
+			else {
+				throw new Exception("Modo não identificado");
+			}
+		}
+		catch(Exception e){
+			System.out.println(e.getMessage());
+		}
+	}
+	public void mostrar(){
+		System.out.println("Temperatura: " + temperatura + "\nModo: " + modo);
 	}
 }
