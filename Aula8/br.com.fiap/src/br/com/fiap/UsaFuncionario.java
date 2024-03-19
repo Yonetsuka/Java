@@ -17,7 +17,7 @@ public class UsaFuncionario {
 			System.out.println("Nome: " + funcionario1.getNome() + 
 					"\nSalário: " + funcionario1.salario(6) + "reais");
 		} catch(Exception e) {
-			
+			System.out.println("Nome e/ou valor por hora inválido");
 		}
 	}
 
