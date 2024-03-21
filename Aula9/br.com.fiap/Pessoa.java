@@ -9,7 +9,8 @@ public class Pessoa(){
   }
   public Pessoa(String Nome, int AnoNascimento){
     this.Nome = Nome;
-    this.AnoNascimento = AnoNascimento;
+    //this.AnoNascimento = AnoNascimento;]
+    setAnoNacimento(anoNascimento);
   }
   //get e set
   public String getNome(){
@@ -21,7 +22,22 @@ public class Pessoa(){
   public String getAnoNascimento(){
     return AnoNascimento;
   }
-  public void setNome(int AnoNascimento){
-    this.AnoNascimento = AnoNascimento;
+  public void setAnoNascimento(int AnoNascimento){
+    LocalDate anoAtual =LocalDate.now();
+    try{
+      if(anoNascimento >= 1900 && anoNeascimento <= anoAtual.getYear()){
+        this.AnoNascimento = AnoNascimento;
+      } else{
+        throw new Exception("Valor incorreto! (1900-ano atual)");
+      }
+    }
+    catch(Exception e){
+      System.out.println(e.getMessage);
+    }
+  }
+
+  public int calculaIdade(int anoAtual){
+    int idade = anoAtual - AnoNascimento;
+    return idade;
   }
 }
