@@ -1,6 +1,7 @@
 package br.com.fiap;
 
 import java.util.Scanner;
+import java.time.LocalDate;
 
 public class UsaEleitor2 {
 
