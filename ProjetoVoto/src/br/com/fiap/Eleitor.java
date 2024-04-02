@@ -8,9 +8,9 @@ public class Eleitor {
 	public Eleitor() {
 		
 	}
-	public Eleitor(String nome,int anoNascimeto,int numTitulo, int zona, int secao) {
+	public Eleitor(String nome,int anoNascimento,int numTitulo, int zona, int secao) {
 		this.nome = nome;
-		this.anoNascimeto = anoNascimeto;
+		this.anoNascimento = anoNascimento;
 		this.zona = zona;
 		this.secao = secao;
 	}
