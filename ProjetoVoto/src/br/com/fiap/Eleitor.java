@@ -1,5 +1,7 @@
 package br.com.fiap;
 
+import java.time.LocalDate;
+
 public class Eleitor {
 	//variáveis
 	private String nome;
