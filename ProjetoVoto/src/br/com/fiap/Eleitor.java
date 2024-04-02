@@ -53,8 +53,7 @@ public class Eleitor {
 	}
 	//void
 	public int calculaIdade(int anoAtual){
-		int idade = anoAtual - getAnoNascimento();
-		return idade;
+		return anoAtual - anoNascimento;
 	}
 	
 }
