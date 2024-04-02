@@ -9,7 +9,10 @@ public class Eleitor {
 		
 	}
 	public Eleitor(String nome,int anoNascimeto,int numTitulo, int zona, int secao) {
-		
+		this.nome = nome;
+		this.anoNascimeto = anoNascimeto;
+		this.zona = zona;
+		this.secao = secao;
 	}
 	//gets e sets
 	public String getNome() {
