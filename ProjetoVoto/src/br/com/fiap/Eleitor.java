@@ -26,11 +26,16 @@ public class Eleitor {
 	}
 	public void setAnoNascimento(int anoNascimento) {
 		//this.anoNascimento = anoNascimento;
-		if (anoNascimento - 16 < 2024 && anoNascimento >= 1900) {
-			this.anoNascimento = anoNascimento;
-		}
-		else {
-			System.out.println("Ano de nascimento fora da faixa permitida");
+		try{
+			int anoAtualMenos16 = LocalDate.now().getYear() - 16;
+			if (anoNascimento <= anoAtualMenos16 && anoNascimento >= 1900) {
+				this.anoNascimento = anoNascimento;
+			}
+			else {
+				throw new Exception("Ano de nascimento fora da faixa permitida");
+			}
+		}catch{
+			System.out.println(e.getMessage());
 		}
 	}
 	public int getNumTitulo() {
