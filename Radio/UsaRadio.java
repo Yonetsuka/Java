@@ -10,7 +10,7 @@ public class UsaRadio{
     float estacao;
     int volume,escolha;
     try{
-      aux = JOptionPane.showINputDialog("Escolha o volume");
+      aux = JOptionPane.showInputDialog("Escolha o volume");
       volume = Integer.parseInt(aux);
       aux = JOptionPane.showInputDialog("Escolha a estação");
       estacao = Float.parseFloat(aux);
