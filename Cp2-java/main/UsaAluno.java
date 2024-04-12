@@ -11,7 +11,7 @@ public class UsaAluno {
 		// TODO Auto-generated method stub
 		//gerando variáveis
 		Period periodo;
-		String aux,nome;
+		String aux,nome,formatoUSA;
 		int rm;
 		LocalDate dataNasc, dataAtual;
 		dataAtual = LocalDate.now();
@@ -29,15 +29,21 @@ public class UsaAluno {
 		nome = JOptionPane.showInputDialog("Digite o nome do aluno1: ");
 		aux =  JOptionPane.showInputDialog("Digite o rm do aluno1: ");
 		rm = Integer.parseInt(aux);
-		aux = JOptionPane.showInputDialog("Digite a data de nascimento1: ");
-		dataNasc = LocalDate.parse(aux);
+		aux = JOptionPane.showInputDialog("Digite a data de nascimento\n(Separe com /): ");
+		formatoUSA = aux.substring(6,10);
+		formatoUSA += "-" + aux.substring(3,5);
+		formatoUSA += "-" + aux.substring(0,2);
+		dataNasc = LocalDate.parse(formatoUSA);
 		aluno1 = new Aluno(rm,nome,dataNasc);
 		//aluno 2
 		nome = JOptionPane.showInputDialog("Digite o nome do aluno2: ");
 		aux =  JOptionPane.showInputDialog("Digite o rm do aluno2: ");
 		rm = Integer.parseInt(aux);
-		aux = JOptionPane.showInputDialog("Digite a data de nascimento2: ");
-		dataNasc = LocalDate.parse(aux);
+		aux = JOptionPane.showInputDialog("Digite a data de nascimento\n(Separe com /): ");
+		formatoUSA = aux.substring(6,10);
+		formatoUSA += "-" + aux.substring(3,5);
+		formatoUSA += "-" + aux.substring(0,2);
+		dataNasc = LocalDate.parse(formatoUSA);
 		aluno2 = new Aluno(rm,nome,dataNasc);
 		JOptionPane.showMessageDialog(null, "Lista de alunos:");
 		aux = aluno1.calculaIdadeCompleta(dataAtual);
