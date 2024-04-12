@@ -1,15 +1,15 @@
-package br.com.fiap
+package br.com.fiap.bean;
 
 import java.time.LocalDate;
-import javax.swing.JOptionPane;
 import java.time.Period;
-import java.time.format.DateTimeFormatter;
+import javax.swing.JOptionPane;
 
 public class Aluno{
     //variáveis
     Period periodo;
+    public int rmAntes,rmDepois;
     private int rm;
-    private String nome, formatoUSA;
+    private String nome;
     private LocalDate dataDeNascimento;
     //construtores vazios
     public Aluno(){
@@ -30,8 +30,12 @@ public class Aluno{
             if(rm >= 97001 && rm <= 551999){
                 this.rm = rm;
             }
+            else {
+            	throw new Exception("Rm fora da faixa");
+            }
         }catch(Exception e){
-            System.out.println(e.getMessage());
+        	JOptionPane.showMessageDialog(null,e.getMessage());
+            System.exit(0);
         }
     }
     public String getNome(){
@@ -47,26 +51,24 @@ public class Aluno{
         //this.dataDeNascimento = dataDeNascimento;
         try{
             int ano = dataDeNascimento.getYear();
-            if(this.ano <= 1900){
+            if(ano >= 1900){
                 this.dataDeNascimento = dataDeNascimento;
             }
             else{
                 throw new Exception("Ano abaixo de 1900");
             }
         }catch(Exception e){
-            System.out.println(e.getMessage());
+        	JOptionPane.showMessageDialog(null,e.getMessage());
+            System.exit(0);
         }
     }
     //método
-    public String calculaIdadeCompleta(int anoAtual){
+    public String calculaIdadeCompleta(LocalDate anoAtual){
         //anoNascimento = dataDeNascimento.getYear();
         //periodo = Period.between(anoAtual - anoNascimento);
         //return periodo.getYears();
-        int dia = anoAtual / 1000000;
-        int mes = (anoAtual / 10000) % 100;
-        int ano = anoAtual % 10000;
-        LocalDate dataLocalDate = LocalDate.of(ano, mes, dia);
-        periodo = Period.between(anoAtual - anoNascimento);
-        return periodo;
+    	periodo = Period.between(dataDeNascimento, anoAtual);
+    	String idade = periodo.toString();
+    	return idade;
     }
 }
