@@ -39,7 +39,7 @@ public class Pessoa{
         throw new Exception("Data fora da faixa permitida");
       }
     }catch(Esception e){
-      JOptionPane.sowMessageDialog(null,e.getMessage());
+      JOptionPane.showMessageDialog(null,e.getMessage());
       System.exit(0);//encerra oprograma após o erro
     }
   }
