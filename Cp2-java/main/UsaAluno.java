@@ -47,6 +47,7 @@ public class UsaAluno {
 		formatoUSA += "-" + aux.substring(0,2);
 		dataNasc = LocalDate.parse(formatoUSA);
 		aluno2 = new Aluno(rm,nome,dataNasc);
+		//Mostrando informações dos alunos
 		JOptionPane.showMessageDialog(null, "Lista de alunos:");
 		aux = aluno1.calculaIdadeCompleta(dataAtual);
 		periodo = Period.parse(aux);
