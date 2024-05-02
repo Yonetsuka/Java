@@ -1,5 +1,10 @@
 package br.com.fiap;
-
+/**
+*
+* @author Cássio
+* @version 1.0
+*
+**/
 public class ContaPoupanca implements ContaBancaria{
   private int numConta;
   private float saldo;
@@ -19,6 +24,13 @@ public class ContaPoupanca implements ContaBancaria{
     this.saldo = saldo;
   }
   //métodos
+  /**
+  * permite sacar o valor informado
+  * valor não pode ser maior que o valor de saldo
+  * @author Cássio
+  * @param float valor - valor indicado a ser sacado
+  * @return float - valor do saldo(ataulizado)
+  **/
   public float sacar(float valor){
     try{
       if(valor <= saldo){
@@ -32,6 +44,12 @@ public class ContaPoupanca implements ContaBancaria{
     return saldo;
   }
 
+  /**
+  * permite depositar o valor informado
+  * @author Cássio
+  * @param float valor - valor indicado a ser sacado
+  * @return float - valor do saldo(ataulizado)
+  **/
   public float depositar(){
     saldo += valor;
     return valor;
