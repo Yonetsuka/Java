@@ -6,7 +6,7 @@ package br.com.fiap.bean;
 **/
 import javax.swing.JOptionPane;
 
-public class ContaEspecial{
+public class ContaEspecial implements ContaBancaria{
   private int numConta;
   private float saldo,limite;
 
