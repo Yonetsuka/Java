@@ -7,7 +7,7 @@ public class UsaConta{
     String aux,escolha = "sim";
     int numConta,opcao;
     float saldo,valor;
-    while(escolha.equalsignoreCase("sim"){
+    while(escolha.equalsignoreCase("sim")){
       try{
         aux = JOptionPane.showINputDialog("Digite o número da conta");
         numConta = Integer.parseInt(aux);
