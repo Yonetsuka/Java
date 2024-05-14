@@ -1,11 +1,18 @@
 package br.com.fiap.main;
 
 import java.awt.Container;
+import java.awt.Dimension;
+import java.awt.Toolkit;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 
+import javax.swing.ImageIcon;
 import javax.swing.JFrame;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
+import javax.swing.JMenuItem;
 
+@SupressWarnings("Serial")
 public class GUIPrincipal extends JFrame{
   private Container contentPane;
   private JMenuBar mnBarra;
@@ -37,6 +44,7 @@ public class GUIPrincipal extends JFrame{
     mnBarra.add(Arquivo);
     mnBarra.add(mnFuncionario);
     mnArquivo.add(miSair);
+    mnFuncionario.add(miFreelancer);
     mnFuncionario.add(miVendedor);
     mnFuncionario.add(miVigiaNoturno);
   }
