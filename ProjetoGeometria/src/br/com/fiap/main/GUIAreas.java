@@ -206,31 +206,31 @@ public class GUIAreas extends JPanel {
 		// 	}
 		// });
 		
-		btTriangulo.addActionListener(new ActionListener() {			
-			@Override
-			public void actionPerformed(ActionEvent e) {
-				try {
-					if (tfLado.getText().isBlank() || tfAltura.getText().isBlank()) {
-						throw new Exception("Preencha todos os campos!");
-					} else {
-						Triangulo tri = new Triangulo();
-						tri.setLado(Float.parseFloat(tfLado.getText()));
-						tri.setAltura(Float.parseFloat(tfAltura.getText()));
-						String resultados = "Cálculo da Área"
-								+ "\nTriângulo de Lado: " + tri.getLado()
-								+ "\nTriângulo de Altura: " + tri.getAltura()
-								+ "\nÁrea do Triângulo: " + tri.calculaArea();
-						taResultados.setForeground(Color.red);
-						taResultados.setText(resultados);
-						imagem1 = new ImageIcon(getClass().getResource("images/triangulo.png"));
-						lbImagem.setIcon(imagem1);
-					}
-				} catch (Exception e2) {
-					JOptionPane.showMessageDialog(null, e2.getMessage(), 
-							"Erro", JOptionPane.ERROR_MESSAGE);
-				}				
-			}
-		});
+		// btTriangulo.addActionListener(new ActionListener() {			
+		// 	@Override
+		// 	public void actionPerformed(ActionEvent e) {
+		// 		try {
+		// 			if (tfLado.getText().isBlank() || tfAltura.getText().isBlank()) {
+		// 				throw new Exception("Preencha todos os campos!");
+		// 			} else {
+		// 				Triangulo tri = new Triangulo();
+		// 				tri.setLado(Float.parseFloat(tfLado.getText()));
+		// 				tri.setAltura(Float.parseFloat(tfAltura.getText()));
+		// 				String resultados = "Cálculo da Área"
+		// 						+ "\nTriângulo de Lado: " + tri.getLado()
+		// 						+ "\nTriângulo de Altura: " + tri.getAltura()
+		// 						+ "\nÁrea do Triângulo: " + tri.calculaArea();
+		// 				taResultados.setForeground(Color.red);
+		// 				taResultados.setText(resultados);
+		// 				imagem1 = new ImageIcon(getClass().getResource("images/triangulo.png"));
+		// 				lbImagem.setIcon(imagem1);
+		// 			}
+		// 		} catch (Exception e2) {
+		// 			JOptionPane.showMessageDialog(null, e2.getMessage(), 
+		// 					"Erro", JOptionPane.ERROR_MESSAGE);
+		// 		}				
+		// 	}
+		// });
 		
 	}
 }
