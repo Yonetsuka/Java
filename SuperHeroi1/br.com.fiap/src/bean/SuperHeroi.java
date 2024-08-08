@@ -1,5 +1,7 @@
 package.br.com.fiap.bean;
 
+import java.util.ArrayList;
+
 public class SuperHeroi{
   private String nome,idSecreta;
   private ArrayList<String> poderes, fraquezas;
