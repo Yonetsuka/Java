@@ -55,7 +55,7 @@ public class DragonBallSuper implements IDBSuper{
   * @param path - caminho até chegar o local onde o arquivo está
   * @return DragonBallSuper - irá trazer todos os atributos da carta
   */
-  public DragonBallSuper ler(String path){
+  public DragonBallSuper ler(String path) throws IOException{
     BufferedReader br = new BufferedReader(new FileReader(path + "/" +  nome + ".txt"));
     Nome = br.readLine();
     Ki = br.readLine();
