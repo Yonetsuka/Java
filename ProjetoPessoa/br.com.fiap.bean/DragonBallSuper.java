@@ -1,16 +1,16 @@
 package br.com.fiap.bean;
 
 public class DragonBallSuper implements IDBSuper{
-  public String nome;
+  public String Nome;
   public int Ki,Tecnicas,Velocidade,Transformacoes;
 
   public DragonBallSuper(){}
 
   public String getNome(){
-    return nome;
+    return Nome;
   }
-  public void setNome(String nome){
-    this.nome = nome;
+  public void setNome(String Nome){
+    this.Nome = Nome;
   }
 
   public int getKi(){
