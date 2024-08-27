@@ -13,7 +13,7 @@ public class UsaPessoa{
         aux = JOptionPane.showInputDialog("Escolha:\n1. Cadastrar\n2. Consultar");
         opcao = Integer.parseInt(aux);
         path = JOptionPane.showInputDialog("Digite o camiho da pasta:");
-        Pessoa = new Pessoa();
+        pessoa = new Pessoa();
         switch(opcao){
           case 1:
             codigo = JOptionPane.showInputDialog("Digite o codigo");
