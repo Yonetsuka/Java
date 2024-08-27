@@ -22,7 +22,7 @@ public class UsaPessoa{
             pessoa.setCodigo(codigo);
             pessoa.setNome(nome);
             pessoa.setEmail(email);
-            JOptionPane.showMEssageDialog(null, pessoa.grava(path));
+            JOptionPane.showMessageDialog(null, pessoa.grava(path));
             break;
           case 2:
             codigo = JOptionPane.showInputDialog("Digite o código:");
