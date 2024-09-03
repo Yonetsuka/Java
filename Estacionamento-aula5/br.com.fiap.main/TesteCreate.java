@@ -12,7 +12,7 @@ public class TesteCreate{
     carro.setDescricao("Nissan Kicks");
 
     CarroDAO carroDAO = new CarroDAO(con);
-    System.out.,println(carroDAO.inserir());
+    System.out.,println(carroDAO.inserir(carro));
     
     ConnectionFactory.fecharCOnexao(con);
   }
