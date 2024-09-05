@@ -3,6 +3,8 @@ public class Cliente{
   private int idCliente,
   private String nomeCliente, placa;
 
+  public Cliente(){}
+  
   public int getIdCliente(){
     return idCliente;
   }
