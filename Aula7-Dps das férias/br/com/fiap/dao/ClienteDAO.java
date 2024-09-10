@@ -50,11 +50,11 @@ public class ClienteDAO{
   public String excluir(Cliente cliente) {
         String sql = "delete from ddd_cliente where id_cliente = ?";
         try (PreparedStatement ps = getCon().prepareStatement(sql);) {
-            ps.setString(1, cliente.getIdCliente());
+            ps.setInt(1, cliente.getIdCliente());
             if (ps.executeUpdate() > 0) {
                 return "Excluido com sucesso.";
             } else {
-                return "Erro ao alterar";
+                return "Erro ao excluir";
             }
         } catch (SQLException e) {
             return "Erro ao excluir";
