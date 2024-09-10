@@ -18,7 +18,7 @@ public class ClienteDAO{
   public String inserir(Cliente cliente){
     String sql = "insert into ddd_cliente(id_cliente,nome_cliente,placa) values(?,?,?)";
     try (PreparedStatement ps = getCon().prepareStatement(sql);) {
-            ps.setString(1, cliente.getIdCliente());
+            ps.setInt(1, cliente.getIdCliente());
             ps.setString(2, cliente.getNomeCliente());
             ps.setString(3, cliente.getClientePlaca());
             if (ps.executeUpdate() > 0) {
