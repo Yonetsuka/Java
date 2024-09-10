@@ -36,7 +36,7 @@ public class ClienteDAO{
         try (PreparedStatement ps = getCon().prepareStatement(sql);) {
             ps.setString(1, cliente.getPlaca());
             ps.setString(2, cliente.getNomeCliente());
-            ps.setString(3, cliente.getIdCliente());
+            ps.setInt(3, cliente.getIdCliente());
             if (ps.executeUpdate() > 0) {
                 return "Alterado com sucesso.";
             } else {
