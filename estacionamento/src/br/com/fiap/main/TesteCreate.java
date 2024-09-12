@@ -10,9 +10,9 @@ public class TesteCreate {
         Connection con = ConnectionFactory.abrirConexao();
         Carro carro = new Carro();
         CarroDAO carroDAO = new CarroDAO(con);
-        carro.setPlaca("JKK1902");
-        carro.setCor("Roxo");
-        carro.setDescricao("Ferrari");
+        carro.setPlaca("JKK1900");
+        carro.setCor("Vermelho");
+        carro.setDescricao("Nissan Kicks");
         System.out.println(carroDAO.inserir(carro));
         ConnectionFactory.fecharConexao(con);
     }

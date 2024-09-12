@@ -12,11 +12,12 @@ public class TesteRead {
         Connection con = ConnectionFactory.abrirConexao();
         CarroDAO carroDAO = new CarroDAO(con);
         ArrayList<Carro> resultado = carroDAO.listarTodos();
-        if(resultado != null){
-            for(Carro carro: resultado){
+        if (resultado != null) {
+            for (Carro carro : resultado) {
                 System.out.println("Placa: " + carro.getPlaca());
                 System.out.println("Cor: " + carro.getCor());
                 System.out.println("Descrição: " + carro.getDescricao());
+                System.out.println();
             }
         }
         ConnectionFactory.fecharConexao(con);

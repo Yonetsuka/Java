@@ -10,10 +10,10 @@ public class TesteUpdate {
     public static void main(String[] args) {
         Connection con = ConnectionFactory.abrirConexao();
         Carro carro = new Carro();
-        carro.setPlaca("JKK1900");
-        carro.setCor("Prata");
-        carro.setDescricao("Nissan March");
         CarroDAO carroDAO = new CarroDAO(con);
+        carro.setPlaca("JKK1900");
+        carro.setCor("Amarelo");
+        carro.setDescricao("Nissan Kicks Batido");
         System.out.println(carroDAO.alterar(carro));
         ConnectionFactory.fecharConexao(con);
     }

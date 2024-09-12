@@ -10,8 +10,8 @@ public class TesteDelete {
     public static void main(String[] args) {
         Connection con = ConnectionFactory.abrirConexao();
         Carro carro = new Carro();
-        carro.setPlaca("JKK1900");
         CarroDAO carroDAO = new CarroDAO(con);
+        carro.setPlaca("JKK1900");
         System.out.println(carroDAO.excluir(carro));
         ConnectionFactory.fecharConexao(con);
     }

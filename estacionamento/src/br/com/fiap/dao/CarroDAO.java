@@ -36,7 +36,7 @@ public class CarroDAO {
     }
 
     public String alterar(Carro carro) {
-        String sql = "update ddd_carro set cor = ?, descricao = ? where placa = ?";
+        String sql = "update ddd_carro set cor = ?,descricao = ? where placa = ?";
         try (PreparedStatement ps = getCon().prepareStatement(sql);) {
             ps.setString(1, carro.getCor());
             ps.setString(2, carro.getDescricao());
@@ -56,23 +56,22 @@ public class CarroDAO {
         try (PreparedStatement ps = getCon().prepareStatement(sql);) {
             ps.setString(1, carro.getPlaca());
             if (ps.executeUpdate() > 0) {
-                return "Excluido com sucesso.";
+                return "Excluído com sucesso.";
             } else {
-                return "Erro ao alterar";
+                return "Erro ao excluir";
             }
         } catch (SQLException e) {
-            return "Erro ao excluir";
+            return "Erro de SQL: " + e.getMessage();
         }
     }
 
-    public ArrayList<Carro> listarTodos(){
+    public ArrayList<Carro> listarTodos() {
         String sql = "select * from ddd_carro order by placa";
         ArrayList<Carro> listaCarro = new ArrayList<Carro>();
-
-        try (PreparedStatement ps = getCon().prepareStatement(sql);) {
-            ResultSet rs = ps.executeQuery();
-            if (rs != null){
-                while(rs.next()){
+        try (PreparedStatement ps = getCon().prepareStatement(sql);
+             ResultSet rs = ps.executeQuery();) {
+            if (rs != null) {
+                while (rs.next()) {
                     Carro carro = new Carro();
                     carro.setPlaca(rs.getString(1));
                     carro.setCor(rs.getString(2));
@@ -80,12 +79,13 @@ public class CarroDAO {
                     listaCarro.add(carro);
                 }
                 return listaCarro;
-            }else{
+            } else {
                 return null;
             }
         } catch (SQLException e) {
-            System.out.println("Erro de SQL: "+ e.getMessage());
+            System.out.println("Erro de SQL: " + e.getMessage());
             return null;
         }
     }
+
 }
