@@ -29,7 +29,7 @@ public class CarroView{
           System.out.println(carroController.excluirCarro(placa));
           break;
         case 3:
-          System.out.println(carroController.listarUmCarro(placa));
+          JOptionPane.showMessageDialog(null, carroController.listarUmCarro(placa));
           break;
         case default:
           System.out.println("Opção inválida");
