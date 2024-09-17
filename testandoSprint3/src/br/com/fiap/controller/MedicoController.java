@@ -41,34 +41,22 @@ public class MedicoController {
         return resultado;
     }
 
-    public String excluirMedico(int idmedico, String nome, int idade, String senha, String especialidade,
-                                int treinos)throws ClassNotFoundException, SQLException{
+    public String excluirMedico(int idmedico)throws ClassNotFoundException, SQLException{
         String resultado;
         Connection con = ConnectionFactory.abrirConexao();
         MedicoResidente medicoResidente = new MedicoResidente();
         medicoResidente.setIdMedico(idmedico);
-        medicoResidente.setNome(nome);
-        medicoResidente.setIdade(idade);
-        medicoResidente.setSenha(senha);
-        medicoResidente.setEspecialidade(especialidade);
-        medicoResidente.setTreinos(treinos);
         MedicoResidenteDAO medicoResidenteDAO = new MedicoResidenteDAO(con);
         resultado = medicoResidenteDAO.excluir(medicoResidente);
         ConnectionFactory.fecharConexao(con);
         return resultado;
     }
 
-    public String listarUmMedico(int idmedico, String nome, int idade, String senha, String especialidade,
-                                int treinos)throws ClassNotFoundException, SQLException{
+    public String listarUmMedico(int idmedico)throws ClassNotFoundException, SQLException{
         String resultado;
         Connection con = ConnectionFactory.abrirConexao();
         MedicoResidente medicoResidente = new MedicoResidente();
         medicoResidente.setIdMedico(idmedico);
-        medicoResidente.setNome(nome);
-        medicoResidente.setIdade(idade);
-        medicoResidente.setSenha(senha);
-        medicoResidente.setEspecialidade(especialidade);
-        medicoResidente.setTreinos(treinos);
         MedicoResidenteDAO medicoResidenteDAO = new MedicoResidenteDAO(con);
         resultado = medicoResidenteDAO.listarUm(medicoResidente);
         ConnectionFactory.fecharConexao(con);
