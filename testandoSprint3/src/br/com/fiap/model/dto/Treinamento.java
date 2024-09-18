@@ -1,7 +1,7 @@
 package br.com.fiap.model.dto;
 
 public class Treinamento{
-  private int treinamentoID;
+  private int treinamentoID, idMedico;
   private String titulo;
   private String status;
 
@@ -10,6 +10,14 @@ public class Treinamento{
   }
   public void setTreinamentoID(int treinamentoID){
     this.treinamentoID = treinamentoID;
+  }
+
+  public int getIdMedico(){
+    return idMedico;
+  }
+
+  public void setIdMedico(int idMedico){
+    this.idMedico = idMedico;
   }
 
   public String getTitulo(){
