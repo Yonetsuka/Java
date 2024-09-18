@@ -21,14 +21,12 @@ public class MedicoResidenteDAO implements IDAO{
 
     public String inserir(Object object){
         medicoResidente = (MedicoResidente) object;
-        String sql = "insert into MEDICORESIDENTE(idmedico,nome,idade,senha,especialidade,treinos) values(?,?,?,?,?,?)";
+        String sql = "insert into MEDICORESIDENTE(idmedico,nome,idade,especialidade) values(?,?,?,?)";
         try(PreparedStatement ps = getCon().prepareStatement(sql)){
             ps.setInt(1, medicoResidente.getIdMedico());
             ps.setString(2, medicoResidente.getNome());
             ps.setInt(3,medicoResidente.getIdade());
-            ps.setString(4,medicoResidente.getSenha());
-            ps.setString(5,medicoResidente.getEspecialidade());
-            ps.setInt(6,medicoResidente.getTreinos());
+            ps.setString(4,medicoResidente.getEspecialidade());
             if(ps.executeUpdate() > 0){
                 return "inserido com sucesso";
             }else{
@@ -41,14 +39,12 @@ public class MedicoResidenteDAO implements IDAO{
 
     public String alterar(Object object){
         medicoResidente = (MedicoResidente) object;
-        String sql = "update MEDICORESIDENTE set nome = ?,idade = ?, senha = ?, especialidade = ?, treinos = ? where idmedico = ?";
+        String sql = "update MEDICORESIDENTE set nome = ?,idade = ?, especialidade = ?,  where idmedico = ?";
         try(PreparedStatement ps = getCon().prepareStatement(sql)){
             ps.setString(1, medicoResidente.getNome());
             ps.setInt(2,medicoResidente.getIdade());
-            ps.setString(3,medicoResidente.getSenha());
-            ps.setString(4,medicoResidente.getEspecialidade());
-            ps.setInt(5,medicoResidente.getTreinos());
-            ps.setInt(6,medicoResidente.getIdMedico());
+            ps.setString(3,medicoResidente.getEspecialidade());
+            ps.setInt(4,medicoResidente.getIdMedico());
             if(ps.executeUpdate() > 0){
                 return "Alterado com sucesso";
             }else{
@@ -82,8 +78,8 @@ public class MedicoResidenteDAO implements IDAO{
             ResultSet rs = ps.executeQuery();
             if(rs.next()){
                 return "Id medico: " + medicoResidente.getIdMedico() + "\nNome: " + rs.getString("nome") +
-                        "\nSenha: " + rs.getString("senha") + "\nIdade: " + rs.getInt("idade") +
-                        "\nEspecialidade: " + rs.getString("especialidade") + "\nTreinos: " + rs.getString("treinos");
+                        "\nIdade: " + rs.getInt("idade") +
+                        "\nEspecialidade: " + rs.getString("especialidade") ;
             }else{
                 return "registro não encontrado";
             }
