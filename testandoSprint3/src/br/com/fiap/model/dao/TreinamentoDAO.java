@@ -2,6 +2,8 @@ package br.com.fiap.model.dao;
 
 import java.sql.Connection;
 import br.com.fiap.model.dto.Treinamento;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
 
 public class TreinamentoDAO implements IDAO{
   private Connection con;
@@ -28,7 +30,7 @@ public class TreinamentoDAO implements IDAO{
       }else{
         return "Erro ao inserir";
       }
-    }catch(Exception e){
+    }catch(SQLException e){
       return "Erro: " + e.getMessage();
     }
   }
@@ -46,7 +48,7 @@ public class TreinamentoDAO implements IDAO{
       }else{
         return "Erro ao alterar";
       }
-    }catch(Exception e){
+    }catch(SQLException e){
       return "Erro: " + e.getMessage();
     }
   }
@@ -61,7 +63,7 @@ public class TreinamentoDAO implements IDAO{
       }else{
         return "Erro ao excluir";
       }
-    }catch(Exception e){
+    }catch(SQLException e){
       return "Erro: " + e.getMessage();
     }
   }
@@ -76,7 +78,7 @@ public class TreinamentoDAO implements IDAO{
         return "Id do treinamento: " + treinamento.getIdTreinamento() + "\nTitulo: " + rs.getString("titulo") +
           "\nStatus: " + rs.getString("status") + "\nId do médico: " + rs.getInt("idMedico");
       }
-    }catch(Exception e){
+    }catch(SQLException e){
       return "Erro: " + e.getMessage();
     }
   }
