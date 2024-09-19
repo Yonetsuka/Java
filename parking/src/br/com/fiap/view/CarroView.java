@@ -31,7 +31,7 @@ public class CarroView{
         case 3:
           JOptionPane.showMessageDialog(null, carroController.listarUmCarro(placa));
           break;
-        case default:
+        default:
           System.out.println("Opção inválida");
       }
       }catch(Exception e){
