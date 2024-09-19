@@ -1,7 +1,7 @@
 package br.com.fiap.model.dto;
 
 public class MedicoResidente {
-    private int idMedico,idade;
+    private int idMedico,idade,idInstituto,idEquipamento;
     private String nome,especialidade;
 
     public int getIdMedico() {
@@ -30,5 +30,12 @@ public class MedicoResidente {
 
     public void setIdade(int idade) {
         this.idade = idade;
+    }
+
+    public int getIdInstituto(){
+        return idInstituto;
+    }
+    public void setIdInstituto(int idInstituto){
+        this.idInstituto = idInstituto;
     }
 }
