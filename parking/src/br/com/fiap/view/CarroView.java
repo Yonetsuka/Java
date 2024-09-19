@@ -35,7 +35,7 @@ public class CarroView{
           System.out.println("Opção inválida");
       }
       }catch(Exception e){
-        System.out.println("Erro: " + e.getMessage())
+        System.out.println("Erro: " + e.getMessage());
       }
     }while(JOptionPane.showConfirmDialog(null, "Deseja continuar ?", "Atenção", JOptionPane.YES_NO_OPTION, JOptionPane.QUESTION_MESSAGE) == 0);
     JOptionPane.showMessageDialog(null, "Fim do programa");
