@@ -1,5 +1,9 @@
 package br.com.fiap.controller;
 
+import br.com.fiap.model.dao.ConnectionFactory;
+import br.com.fiap.model.dao.CarroDAO;
+import br.com.fiap.model.dto.Carro;
+
 public class CarroController{
   public String inserirCarro(String placa, String cor, String descricao) 
     throws ClassNotFoundException, SQLException{
