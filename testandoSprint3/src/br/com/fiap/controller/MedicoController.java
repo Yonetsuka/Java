@@ -8,7 +8,7 @@ import java.sql.Connection;
 import java.sql.SQLException;
 
 public class MedicoController {
-    public  String inserirMedico(int idmedico, String nome, int idade, String especialidade,
+    public  String inserirMedico(int idmedico, String nome, int idade, String especialidade,int idInstituto,int idEquipamento
                                  )throws ClassNotFoundException, SQLException{
         String resultado;
         Connection con = ConnectionFactory.abrirConexao();
@@ -17,12 +17,15 @@ public class MedicoController {
         medicoResidente.setNome(nome);
         medicoResidente.setIdade(idade);
         medicoResidente.setEspecialidade(especialidade);
+        medicoResidente.setIdInstituto(idInstituto);
+        medicoResidente.setIdEquipamento(idEquipamento);
         MedicoResidenteDAO medicoResidenteDAO = new MedicoResidenteDAO(con);
         resultado = medicoResidenteDAO.inserir(medicoResidente);
         ConnectionFactory.fecharConexao(con);
         return resultado;
     }
-    public String alterarMedico(int idmedico, String nome, int idade, String especialidade)throws ClassNotFoundException, SQLException{
+    public String alterarMedico(int idmedico, String nome, int idade, String especialidade,int idInstituto,int idEquipamento)
+    throws ClassNotFoundException, SQLException{
         String resultado;
         Connection con = ConnectionFactory.abrirConexao();
         MedicoResidente medicoResidente = new MedicoResidente();
@@ -30,6 +33,8 @@ public class MedicoController {
         medicoResidente.setNome(nome);
         medicoResidente.setIdade(idade);
         medicoResidente.setEspecialidade(especialidade);
+        medicoResidente.setIdInstituto(idInstituto);
+        medicoResidente.setIdEquipamento(idEquipamento);
         MedicoResidenteDAO medicoResidenteDAO = new MedicoResidenteDAO(con);
         resultado = medicoResidenteDAO.alterar(medicoResidente);
         ConnectionFactory.fecharConexao(con);
