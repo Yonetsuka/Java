@@ -5,12 +5,12 @@ import br.com.fiap.model.dao.TreinamentoDAO;
 import br.com.fiap.model.dto.Treinamento;
 
 public class TreinametoController{
-  public String inserirTreinamento(int treinamentoID, String titulo, String status, int idMedico)
+  public String inserirTreinamento(int idTreinamento, String titulo, String status, int idMedico)
   throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Treinamento treinamento = new Treinamento();
-    treinamento.setTreinamentoID(treinamentoID);
+    treinamento.setIdTreinamento(idTreinamento);
     treinamento.setTitulo(titulo);
     treinamento.setStatus(status);
     treinamento.setIdMedico(idMedico);
@@ -20,12 +20,12 @@ public class TreinametoController{
     return resultado;
   }
 
-  public String alterarMedico(int treinamentoID, String titulo, String status, int idMedico)
+  public String alterarMedico(int idTreinamento, String titulo, String status, int idMedico)
   throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Treinamento treinamento = new Treinamento();
-    treinamento.setTreinamentoID(treinamentoID);
+    treinamento.setIdTreinamento(idTreinamento);
     treinamento.setTitulo(titulo);
     treinamento.setStatus(status);
     treinamento.setIdMedico(idMedico);
@@ -35,22 +35,22 @@ public class TreinametoController{
     return resultado;
   }
 
-  public String excluirMedico(int treinamentoID)throws ClassNotFoundException, SQLException{
+  public String excluirMedico(int idTreinamento)throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Treinamento treinamento = new Treinamento();
-    treinamento.setTreinamentoID(treinamentoID);
+    treinamento.setIdTreinamneto(idTreinamento);
     TreinamentoDAO treinamentoDAO = new TreinamentoDAO();
     TreinamentoDAO.excluir(treinamento);
     ConnectionFactory.fecharConexao(con);
     return resultado;
   }
 
-  public String listarUmMedico(int treinamentoID)throws ClassNotFoundException, SQLException{
+  public String listarUmMedico(int idTreinamento)throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Treinamento treinamento = new Treinamento();
-    treinamento.setTreinamentoID(treinamentoID);
+    treinamento.setIdTreinamneto(idTreinamento);
     TreinamentoDAO treinamentoDAO = new TreinamentoDAO();
     TreinamentoDAO.listaUm(treinamento);
     ConnectionFactory.fecharConexao(con);
