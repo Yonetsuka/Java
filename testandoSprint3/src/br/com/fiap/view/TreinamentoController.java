@@ -4,8 +4,8 @@ import br.com.fiap.controller.TreinamentoController;
 import javax.swing.*;
 
 public class TreinamentoController{
-  int treinamentoID, idMedico, opcao;
-  String titulo, status, aux;
+  int idTreinamento, idMedico, opcao;
+  String titulo, status;
   String[] escolha = {"inserir","alterar","excluir","listar"};
   TreinamentoController treinamentoController = new TreinamentoController();
   do{
@@ -14,32 +14,26 @@ public class TreinamentoController{
                                            JOptionPane.QUESTION_MESSAGE,null,escolha,escolha[0]);
       switch(opcao){
         case 0:
-          aux = JOptionPane.showInputDialog("Digite o id do treinamento: ");
-          treinamentoID = parseInt(aux);
-          aux = JOptionPane.showInputDialog("Digite o id do médico a fazer o curso: ");
-          idMedico = parseInt(aux);
+          idTreinamento = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do treinamento: "));
+          idMedico = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do medico: "));
           titulo = JOptionPane.showInputDialog("Digite o titulo do treinamento: ");
           status = JOptionPane.showInputDialog("Digite o status do treinamento: ");
-          System.out.println(treinamentoController.inserirTreinamento(treinamentoID,titulo,status,idMedico));
+          System.out.println(treinamentoController.inserirTreinamento(idTreinamento,titulo,status,idMedico));
           break;
         case 1:
-          aux = JOptionPane.showInputDialog("Digite o id do treinamento: ");
-          treinamentoID = parseInt(aux);
-          aux = JOptionPane.showInputDialog("Digite o id do médico a fazer o curso: ");
-          idMedico = parseInt(aux);
+          idTreinamento = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do treinamento: "));
+          idMedico = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do medico: "));
           titulo = JOptionPane.showInputDialog("Digite o titulo do treinamento: ");
           status = JOptionPane.showInputDialog("Digite o status do treinamento: ");
-          System.out.println(treinamentoController.alterarTreinamento(treinamentoID,titulo,status,idMedico));
+          System.out.println(treinamentoController.alterarTreinamento(idTreinamento,titulo,status,idMedico));
           break;
         case 2:
-          aux = JOptionPane.showInputDialog("Digite o id do treinamento: ");
-          treinamentoID = parseInt(aux);
-          System.out.println(treinamentoController.alterarTreinamento(treinamentoID));
+          idTreinamento = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do treinamento: "));
+          System.out.println(treinamentoController.alterarTreinamento(idTreinamento));
           break;
         case 3:
-          aux = JOptionPane.showInputDialog("Digite o id do treinamento: ");
-          treinamentoID = parseInt(aux);
-          System.out.println(treinamentoController.listarUmTreinamento(treinamentoID));
+          idTreinamento = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do treinamento: "));
+          System.out.println(treinamentoController.listarUmTreinamento(idTreinamento));
           break;
         default:
           System.out.println("Opção inválida");
