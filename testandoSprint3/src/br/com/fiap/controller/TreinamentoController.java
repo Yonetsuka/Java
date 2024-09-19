@@ -3,6 +3,8 @@ package br.com.fiap.controller;
 import br.com.fiap.model.dao.ConnectionFactory;
 import br.com.fiap.model.dao.TreinamentoDAO;
 import br.com.fiap.model.dto.Treinamento;
+import java.sql.Connection;
+import java.sql.SQLException;
 
 public class TreinametoController{
   public String inserirTreinamento(int idTreinamento, String titulo, String status, int idMedico)
