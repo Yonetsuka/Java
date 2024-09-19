@@ -15,7 +15,7 @@ public class TreinametoController{
     treinamento.setStatus(status);
     treinamento.setIdMedico(idMedico);
     TreinamentoDAO treinamentoDAO = new TreinamentoDAO();
-    TreinamentoDAO.inserir(treinamento);
+    resultado = TreinamentoDAO.inserir(treinamento);
     ConnectionFactory.fecharConexao(con);
     return resultado;
   }
@@ -30,7 +30,7 @@ public class TreinametoController{
     treinamento.setStatus(status);
     treinamento.setIdMedico(idMedico);
     TreinamentoDAO treinamentoDAO = new TreinamentoDAO();
-    TreinamentoDAO.alterar(treinamento);
+    resultado = TreinamentoDAO.alterar(treinamento);
     ConnectionFactory.fecharConexao(con);
     return resultado;
   }
@@ -41,7 +41,7 @@ public class TreinametoController{
     Treinamento treinamento = new Treinamento();
     treinamento.setIdTreinamneto(idTreinamento);
     TreinamentoDAO treinamentoDAO = new TreinamentoDAO();
-    TreinamentoDAO.excluir(treinamento);
+    resultado = TreinamentoDAO.excluir(treinamento);
     ConnectionFactory.fecharConexao(con);
     return resultado;
   }
@@ -52,7 +52,7 @@ public class TreinametoController{
     Treinamento treinamento = new Treinamento();
     treinamento.setIdTreinamneto(idTreinamento);
     TreinamentoDAO treinamentoDAO = new TreinamentoDAO();
-    TreinamentoDAO.listaUm(treinamento);
+    resultado = TreinamentoDAO.listaUm(treinamento);
     ConnectionFactory.fecharConexao(con);
     return resultado;
   }
