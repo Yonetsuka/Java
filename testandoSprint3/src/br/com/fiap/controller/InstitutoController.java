@@ -14,7 +14,7 @@ public class InstitutoController{
     instituto.setIdInstituto(idInstituto);
     instituto.setNome(nome);
     instituto.setEndereco(endereco);
-    InstitutoDAO institutoDAO = new institutoDAO();
+    InstitutoDAO institutoDAO = new institutoDAO(con);
     resultado = institutoDAO.inserir(instituto);
     ConnectionFactory.fecharConexao(con);
     return resultado;
@@ -27,7 +27,7 @@ public class InstitutoController{
     instituto.setIdInstituto(idInstituto);
     instituto.setNome(nome);
     instituto.setEndereco(endereco);
-    InstitutoDAO institutoDAO = new institutoDAO();
+    InstitutoDAO institutoDAO = new institutoDAO(con);
     resultado = institutoDAO.alterar(instituto);
     ConnectionFactory.fecharConexao(con);
     return resultado;
@@ -38,7 +38,7 @@ public class InstitutoController{
     Connection con = ConnectionFactory.abrirConexao();
     Instituto instituto = new Instituto();
     instituto.setIdInstituto(idInstituto);
-    InstitutoDAO institutoDAO = new institutoDAO();
+    InstitutoDAO institutoDAO = new institutoDAO(con);
     resultado = institutoDAO.excluir(instituto);
     ConnectionFactory.fecharConexao(con);
     return resultado;
@@ -49,7 +49,7 @@ public class InstitutoController{
     Connection con = ConnectionFactory.abrirConexao();
     Instituto instituto = new Instituto();
     instituto.setIdInstituto(idInstituto);
-    InstitutoDAO institutoDAO = new institutoDAO();
+    InstitutoDAO institutoDAO = new institutoDAO(con);
     resultado = institutoDAO.listarUm(instituto);
     ConnectionFactory.fecharConexao(con);
     return resultado;
