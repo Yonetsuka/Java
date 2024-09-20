@@ -38,4 +38,12 @@ public class MedicoResidente {
     public void setIdInstituto(int idInstituto){
         this.idInstituto = idInstituto;
     }
+
+    public int getIdEquipamento() {
+        return idEquipamento;
+    }
+
+    public void setIdEquipamento(int idEquipamento) {
+        this.idEquipamento = idEquipamento;
+    }
 }
