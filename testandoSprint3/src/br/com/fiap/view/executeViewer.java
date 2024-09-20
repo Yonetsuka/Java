@@ -2,7 +2,7 @@ package br.com.fiap.view;
 
 import javax.swing.*;
 import br.com.fiap.controller.MedicoController;
-import br.com.fiap.controller.EquipamentoVRController;
+import br.com.fiap.controller.EquipamentoController;
 import br.com.fiap.controller.InstitutoController;
 import br.com.fiap.controller.TreinamentoController;
 
@@ -12,7 +12,7 @@ public class executeViewer{
   String[] escolha1 = {"medico","treinamento","instituto","equipamento"};
   String[] escolha2 = {"inserir","alterar","excluir","listar"};  
   MedicoController medicoController = new MedicoController();
-  EquipamentoVRController equipamentoVRController = new EquipamentoVRController();
+  EquipamentoController equipamentoController = new EquipamentoController();
   InstitutoController institutoController = new InstitutoController();
   TreinamentoController treinamentoController = new TreinamentoController();
   do{
@@ -107,18 +107,18 @@ public class executeViewer{
             case 0:
               idInstituto = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do instituto: "));
               descricao = JOptionPane.showInputDialog("Digite a descrição do equipamento: ");
-              System.out.println(equipamentoVRController.inserir(idEquipamento,descricao,idInstituto));
+              System.out.println(equipamentoController.inserir(idEquipamento,descricao,idInstituto));
               break;
             case 1:
               idInstituto = Integer.parseInt(JOptionPane.showInputDialog("Digite o id do instituto: "));
               descricao = JOptionPane.showInputDialog("Digite a descrição do equipamento: ");
-              System.out.println(equipamentoVRController.alterar(idEquipamento,descricao,idInstituto));
+              System.out.println(equipamentoController.alterar(idEquipamento,descricao,idInstituto));
               break;
             case 2:
-              System.out.println(equipamentoVRController.excluir(idEquipamento));
+              System.out.println(equipamentoController.excluir(idEquipamento));
               break;
             case 3:
-              System.out.println(equipamentoVRController.listarUm(idEquipamento));
+              System.out.println(equipamentoController.listarUm(idEquipamento));
               break;
             default:
               System.out.println("Opção inválida");
