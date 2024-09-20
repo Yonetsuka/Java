@@ -6,8 +6,8 @@ import br.com.fiap.model.dto.Equipamento;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class EquipamentoControlller{
-  public String inserirEquipamento(int idEquipamento, String descricao, int idInstituto){
+public class EquipamentoController{
+  public String inserirEquipamento(int idEquipamento, String descricao, int idInstituto)throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Equipamento equipamento = new Equipamento();
@@ -20,7 +20,7 @@ public class EquipamentoControlller{
     return resultado;
   }
 
-  public String alterarEquipamento(int idEquipamento, String descricao, int idInstituto){
+  public String alterarEquipamento(int idEquipamento, String descricao, int idInstituto)throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Equipamento equipamento = new Equipamento();
@@ -33,7 +33,7 @@ public class EquipamentoControlller{
     return resultado;
   }
 
-  public String excluirEquipamento(int idEquipamento){
+  public String excluirEquipamento(int idEquipamento)throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Equipamento equipamento = new Equipamento();
@@ -44,7 +44,7 @@ public class EquipamentoControlller{
     return resultado;
   }
 
-  public String listarUmEquipamento(int idEquipamento){
+  public String listarUmEquipamento(int idEquipamento)throws ClassNotFoundException, SQLException{
     String resultado;
     Connection con = ConnectionFactory.abrirConexao();
     Equipamento equipamento = new Equipamento();
