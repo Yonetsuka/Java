@@ -1,16 +1,16 @@
 package br.com.fiap.model.dao;
 
-import br.com.fiap.model.dto.EquipamentoVR;
+import br.com.fiap.model.dto.Equipamento;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class EquipamentoVRDAO{
+public class EquipamentoDAO{
   private Connection con;
-  private EquipamentoVR equipamentoVR;
+  private Equipamento equipamento;
 
-  public EquipamentVRDAO(Connection con){
+  public EquipamentDAO(Connection con){
     this.con = con;
   }
   public Connection getCon(){
@@ -18,11 +18,11 @@ public class EquipamentoVRDAO{
   }
 
   public String inserir(Object object){
-    String sql = "insert into equipamentvr(idequipamento,descricao,idinstituto) values(?,?,?)";
+    String sql = "insert into equipamento(idequipamento,descricao,idinstituto) values(?,?,?)";
     try(PreparedStatement ps = getCon().prepareStatement()){
-      ps.setInt(1,equipamentoVR.getIdEquipamento());
-      ps.setString(2,equipamentoVR.getDescricao());
-      ps.setInt(3,equipamentoVR.getIdInstituto());
+      ps.setInt(1,equipamento.getIdEquipamento());
+      ps.setString(2,equipamento.getDescricao());
+      ps.setInt(3,equipamento.getIdInstituto());
       if(ps.executeUpdate() > 0){
         return "Inserido com sucesso";
       }else{
@@ -34,11 +34,11 @@ public class EquipamentoVRDAO{
   }
 
   public String alterar(Object object){
-    String sql = "update equipamentovr set descricao = ?,idinstituto = ?  where idequipamento = ?";
+    String sql = "update equipamento set descricao = ?,idinstituto = ?  where idequipamento = ?";
     try(PreparedStatement ps = getCon().prepareStatement()){
-      ps.setString(1,equipamentoVR.getDescricao());
-      ps.setInt(2,equipamentoVR.getIdInstituto());
-      ps.setInt(3,equipamentoVR.getIdEquipamento());
+      ps.setString(1,equipamento.getDescricao());
+      ps.setInt(2,equipamento.getIdInstituto());
+      ps.setInt(3,equipamento.getIdEquipamento());
       if(ps.executeUpdate() > 0){
         return "Alterado com sucesso";
       }else{
@@ -50,9 +50,9 @@ public class EquipamentoVRDAO{
   }
 
   public String excluir(Object object){
-    String sql = "delete from equipamentovr where idequipamento = ?";
+    String sql = "delete from equipamento where idequipamento = ?";
     try(PreparedStatement ps = getCon().prepareStatement()){
-      ps.setInt(1,equipamentoVR.getIdEquipamento());
+      ps.setInt(1,equipamento.getIdEquipamento());
       if(ps.executeUpdate() > 0){
         return "Excluido com sucesso"
       }else{
@@ -64,12 +64,12 @@ public class EquipamentoVRDAO{
   }
 
   public String listarUm(Object object){
-    String sql = "select * from equipamentovr where idequipamento = ?";
+    String sql = "select * from equipamento where idequipamento = ?";
     try(PreparedStatement ps = getCon().prepareStatement()){
-      ps.setInt(1,equipamentoVR.getIdEquipamento());
+      ps.setInt(1,equipamento.getIdEquipamento());
       ResultSet rs = ps.executeQuery();
       if(rs.next()){
-        return "Id do equipamento: " + equipamentoVR.getIdEquipamento() + "\nDescrição: " + rs.getString("descricao") +
+        return "Id do equipamento: " + equipamento.getIdEquipamento() + "\nDescrição: " + rs.getString("descricao") +
           "\nId do instituto: " + rs.getInt("idinstituto");
       }else{
         return "Registro não encontrado";
