@@ -22,7 +22,7 @@ public class TreinamentoController{
         return resultado;
     }
 
-    public String alterarMedico(int idTreinamento, String titulo, String status, int idMedico)
+    public String alterarTreinamento(int idTreinamento, String titulo, String status, int idMedico)
             throws ClassNotFoundException, SQLException{
         String resultado;
         Connection con = ConnectionFactory.abrirConexao();
@@ -37,7 +37,7 @@ public class TreinamentoController{
         return resultado;
     }
 
-    public String excluirMedico(int idTreinamento)throws ClassNotFoundException, SQLException{
+    public String excluirTreinamento(int idTreinamento)throws ClassNotFoundException, SQLException{
         String resultado;
         Connection con = ConnectionFactory.abrirConexao();
         Treinamento treinamento = new Treinamento();
@@ -48,7 +48,7 @@ public class TreinamentoController{
         return resultado;
     }
 
-    public String listarUmMedico(int idTreinamento)throws ClassNotFoundException, SQLException{
+    public String listarUmTreinamento(int idTreinamento)throws ClassNotFoundException, SQLException{
         String resultado;
         Connection con = ConnectionFactory.abrirConexao();
         Treinamento treinamento = new Treinamento();
