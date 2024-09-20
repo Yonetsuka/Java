@@ -6,7 +6,7 @@ import br.com.fiap.model.dto.Treinamento;
 import java.sql.Connection;
 import java.sql.SQLException;
 
-public class TreinametoController{
+public class TreinamentoController{
     public String inserirTreinamento(int idTreinamento, String titulo, String status, int idMedico)
             throws ClassNotFoundException, SQLException{
         String resultado;
