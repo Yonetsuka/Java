@@ -1,6 +1,6 @@
 package br.com.fiap.model.dto;
 
-public class EquipamentoVR{
+public class Equipamento{
   private int idEquipamento, idInstituto;
   private String descricao;
 
