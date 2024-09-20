@@ -17,7 +17,7 @@ public class Equipamento{
     this.descricao = descricao;
   }
   public int getIdInstituto(){
-    return idInstituto
+    return idInstituto;
   }
   public void setIdInstituto(int idInstituto){
     this.idInstituto = idInstituto;
