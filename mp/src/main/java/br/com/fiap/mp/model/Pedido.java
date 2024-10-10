@@ -1,9 +1,16 @@
 package br.com.fiap.model;
 
+import jakarta.persistence.*;
+
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
+@Entity(name="Pedido")
+@Table(name="pedido")
 public class Pedido{
+  @Id
+  @GeneratedValue(strategy = GenerationType.IDENTITY)
+  private Long codigoProduto;
   private String nomeProduto;
   private BigDecimal valorNegociado;
   private LocalDate dataDaEntrega;
@@ -12,6 +19,9 @@ public class Pedido{
   private String descricao;
   //criar getter e setters
   // Getters
+    public Long getCodigoProduto(){
+      return codigoProduto;
+    }
     public String getNomeProduto() {
         return nomeProduto;
     }
@@ -37,6 +47,9 @@ public class Pedido{
     }
 
     // Setters
+    public void setCodigoProduto(Long codigoProduto){
+      this.codigoProduto = codigoProduto;
+    }
     public void setNomeProduto(String nomeProduto) {
         this.nomeProduto = nomeProduto;
     }
