@@ -5,20 +5,20 @@
     <title>MP - Mercado Premium</title>
   </head>
   <body>
-    <div>
-      <div>Nome do produto</div>
-      <div>Valor: <span>199,95</span></div>
-      <div>Data de entrega: <span>13/08/2024</span></div>
+    <div th:each="pedido : ${pedidos}">
+      <div th:text="${pedido.nomeProduto}">Nome do produto</div>
+      <div>Valor: <span th:text="${pedido.valorNegociado}">199,95</span></div>
+      <div>Data de entrega: <span th:text="${pedido.dataDaEntrega}">13/08/2024</span></div>
       <div>Produto</div>
       <div>
-        <input value="url do produto">
+        <input th:value="${pedido.urlProduto}" value="url do produto">
       </div>
       <div>Descrição</div>
       <div>
-        <textarea>descrição do produto</textarea>
+        <textarea th:text="${pedido.descricao}">descrição do produto</textarea>
       </div>
       <div>
-        <img src="">
+        <img th:src="%{pedido.urlImagem}" src="">
       </div>
     </div>
   </body>
