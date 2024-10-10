@@ -1,19 +1,23 @@
-import org.springframework.stereotype.Controller;
+import br.com.fiap.mp.model.entity.Pedido;
+import br.com.fiap.mp.model.repository.PedidoRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.ModelAndView;
+import java.util.List;
 
-@Controller
-@RequestMapping("home")
+@RestController
+@RequestMapping("/home")
 public class HomeController{
+  @Autowired
+  private PedidoRepository pedidoRepository;
+  
   @GetMapping
-  public String home(){
-    Pedido pedido = new Pedido();
-    pedido.setNomeProduto("Big Mac");
-    pedido.setUrlImagem();
-    pedido.setUrlProduto();
-    pedido.setUrlDescricao();
-    List<Pedido> pedidos = Arrays.asList(pedido);
-    model.addAttribute("pedidos", pedidos);
-    return "home";
+  public ModelAndView home(){
+    List<Pedido> pedidos = pedidoRepository.findAll();
+    ModelAndView mv = new ModelAndView("home");
+    mv.addObject("pedidos",pedidos);
+    return mv;
   }
 }
